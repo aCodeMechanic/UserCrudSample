@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:user_crud_sample/src/utils/theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:user_crud_sample/theme/theme.dart';
 
 import 'widgets/not_found_widget.dart';
 
@@ -23,10 +24,13 @@ class _HomeState extends State<Home> {
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child:
-        const Stack(
+        child: const Stack(
           children: [
-            Center(child: NotFoundWidget()),
+            // BlocBuilder<SubjectBloc, SubjectState>(
+            //   builder: (context, state) {
+            //     return Center(child: NotFoundWidget());
+            //   },
+            // ),
             Align(
                 alignment: Alignment.bottomLeft,
                 child: Column(
@@ -36,8 +40,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Divider(),
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 30.0, top: 15, bottom: 40),
+                      padding: EdgeInsets.only(left: 30.0, top: 15, bottom: 40),
                       child: Text('Swipe left to delete'),
                     ),
                   ],
