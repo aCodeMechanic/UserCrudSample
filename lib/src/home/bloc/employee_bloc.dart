@@ -50,6 +50,17 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
         emit(EmployeeError(e.toString()));
       }
     });
+
+    on<UndoDeleteEmployee>((event, emit) async {
+      try {
+        //Soft delete instead of hard delete
+        final employeeToDelete = event.employee.copyWith(isDeleted: false);
+        await employeeDao.updateEmployee(employeeToDelete);
+        add(LoadEmployees()); // Reload the list
+      } catch (e) {
+        emit(EmployeeError(e.toString()));
+      }
+    });
   }
 }
 

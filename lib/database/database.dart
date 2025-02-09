@@ -30,8 +30,8 @@ LazyDatabase _openConnection() {
         shareAcrossIsolates: true,
       ),
       web: DriftWebOptions(
-        driftWorker: Uri.parse('sqlite3.wasm'),
-        sqlite3Wasm: Uri.parse('drift_worker.js')
+        sqlite3Wasm: Uri.parse('sqlite3.wasm'),
+        driftWorker: Uri.parse('drift_worker.js')
       )
     );
     return db;

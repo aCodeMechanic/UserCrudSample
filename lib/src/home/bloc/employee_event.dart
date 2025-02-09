@@ -37,3 +37,11 @@ final class DeleteEmployee extends EmployeeEvent {
   @override
   List<Object?> get props => [employee];
 }
+final class UndoDeleteEmployee extends EmployeeEvent {
+  const UndoDeleteEmployee({required this.employee});
+
+  final EmployeeData employee; //Changed Employee to EmployeeData
+
+  @override
+  List<Object?> get props => [employee];
+}

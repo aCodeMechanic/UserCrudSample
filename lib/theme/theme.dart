@@ -10,6 +10,22 @@ const Color textColorPrimary = Colors.black87;
 const Color textColorSecondary = Colors.black54;
 const Color buttonTextColor = Colors.white;
 
+textTheme(
+    {double fontSize = 12.0,
+      color = textColorPrimary,
+      fontWeight = FontWeight.w400,
+      decoration = TextDecoration.none,
+      decorationColor = Colors.transparent}) {
+
+  return TextStyle(
+    fontFamily: 'Roboto',
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight,
+      decoration: decoration,
+      decorationColor: decorationColor);
+}
+
 ThemeData appTheme = ThemeData(
   primaryColor: primaryColor,
   scaffoldBackgroundColor: backgroundColor,
@@ -17,7 +33,7 @@ ThemeData appTheme = ThemeData(
       ColorScheme.fromSwatch(primarySwatch: createMaterialColor(primaryColor)),
   appBarTheme: const AppBarTheme(
     backgroundColor: primaryColor,
-    titleTextStyle: TextStyle(
+    titleTextStyle: TextStyle(fontFamily: 'Roboto',
       color: buttonTextColor,
       fontSize: 20,
       fontWeight: FontWeight.w500,
@@ -26,19 +42,19 @@ ThemeData appTheme = ThemeData(
     elevation: 0,
   ),
   textTheme: TextTheme(
-    bodyLarge: TextStyle(fontSize: 16.0, color: textColorPrimary),
-    bodyMedium: TextStyle(fontSize: 14.0, color: textColorSecondary),
-    titleLarge: TextStyle(
-        fontSize: 24.0, fontWeight: FontWeight.bold, color: textColorPrimary),
-    titleMedium: TextStyle(
-        fontSize: 18.0, fontWeight: FontWeight.w500, color: textColorPrimary),
+    bodyLarge: TextStyle(fontFamily: 'Roboto', fontSize: 14.0, color: textColorPrimary),
+    bodyMedium: TextStyle(fontFamily: 'Roboto',fontSize: 12.0, color: textColorSecondary),
+    titleLarge: TextStyle(fontFamily: 'Roboto',
+        fontSize: 22.0, fontWeight: FontWeight.bold, color: textColorPrimary),
+    titleMedium: TextStyle(fontFamily: 'Roboto',
+        fontSize: 16.0, fontWeight: FontWeight.w500, color: textColorPrimary),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: primaryColor,
       foregroundColor: buttonTextColor,
-      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+      textStyle: const TextStyle(fontFamily: 'Roboto',fontSize: 12, fontWeight: FontWeight.w500),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       elevation: 0,
     ),
@@ -46,13 +62,13 @@ ThemeData appTheme = ThemeData(
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: primaryColor,
-      textStyle: const TextStyle(fontSize: 16),
+      textStyle: const TextStyle(fontFamily: 'Roboto',fontSize: 12),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    labelStyle: TextStyle(color: textColorSecondary),
-    hintStyle: TextStyle(color: textColorSecondary),
-    floatingLabelStyle: TextStyle(color: primaryColor),
+    labelStyle: TextStyle(fontFamily: 'Roboto',color: textColorSecondary),
+    hintStyle: TextStyle(fontFamily: 'Roboto',color: textColorSecondary),
+    floatingLabelStyle: TextStyle(fontFamily: 'Roboto',color: primaryColor),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(5),
       borderSide: BorderSide(color: textFieldBorderColor, width: 1),
@@ -63,12 +79,10 @@ ThemeData appTheme = ThemeData(
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(5),
-      borderSide: BorderSide(color: primaryColor, width: 1),
+      borderSide: BorderSide(color: textFieldBorderColor, width: 1),
     ),
-    filled: true,
-    fillColor: textFieldBackgroundColor,
     contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-    errorStyle: const TextStyle(color: Colors.redAccent),
+    errorStyle: const TextStyle(fontFamily: 'Roboto',color: Colors.redAccent),
     prefixIconColor: textColorSecondary,
     suffixIconColor: textColorSecondary,
   ),
