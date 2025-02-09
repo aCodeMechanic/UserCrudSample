@@ -56,7 +56,7 @@ class EmployeeCard extends StatelessWidget {
                 onTap: (handler) async {
                   context.read<EmployeeBloc>().add(DeleteEmployee(employee: employee));
                   final snackBar = SnackBar(
-                    content: const Text('Yay! A SnackBar!'),
+                    content: const Text('Employee Data has been deleted.'),
                     action: SnackBarAction(
                       label: 'Undo',textColor: primaryColor,
                       onPressed: () async {
